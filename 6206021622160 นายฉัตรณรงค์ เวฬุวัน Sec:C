@@ -1,0 +1,32 @@
+#include <iostream>
+#include<time.h>
+using namespace std;
+
+int main()
+{
+	srand(time(0) );
+	int times = 0;
+	int num = rand() %10;
+	cout << "Program Game : Guess Number\n";
+	cout << "==============================\n";
+	bool done = true;
+	do {
+		int input;
+		cout << "Guess the number (1 to 10) : ";
+		cin >> input;
+		times++;
+		if (input == num) {
+			done = false;
+			cout << "Congratulations! , The secret number is " << num <<endl;
+			cout << "You made " << times<<" guesses "<<endl;
+		}
+		if (input == num) done = false;
+		else if (input > num)
+			cout <<" The secret number is higher \n";
+		else if (input < num)
+			cout <<" The secret number is lower \n";
+		
+		
+	} while (done);
+	return 0 ;
+}
